@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.demo-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 24px;
+  background: #1a1a1f;
+  color: #e5e5ea;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.demo-sidebar h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.demo-sidebar p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b5b5bd;
+}
+
+.demo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.demo-textarea {
+  flex: 1;
+  min-height: 320px;
+  resize: vertical;
+  background: #0f0f13;
+  color: #e5e5ea;
+  border: 1px solid #33333c;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.demo-preview {
+  flex: 1;
+  overflow: auto;
+}
