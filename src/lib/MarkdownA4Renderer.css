@@ -7,7 +7,6 @@
 }
 
 .mdA4-page {
-  position: relative;
   box-sizing: border-box;
   width: var(--mdA4-page-width, 210mm);
   min-height: var(--mdA4-page-min-height, 297mm);
@@ -22,22 +21,6 @@
   line-height: var(--mdA4-line-height, 1.6);
   color: var(--mdA4-text-color, #1a1a1a);
   overflow-wrap: break-word;
-}
-
-/* Faint lines every `pageMinHeight` previewing where printed page breaks fall. */
-.mdA4-page--guides::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--mdA4-page-min-height, 297mm) - 1px),
-    rgba(220, 38, 38, 0.35) calc(var(--mdA4-page-min-height, 297mm) - 1px),
-    rgba(220, 38, 38, 0.35) var(--mdA4-page-min-height, 297mm)
-  );
-  background-size: 100% var(--mdA4-page-min-height, 297mm);
 }
 
 /* Typography */
@@ -167,7 +150,7 @@
   text-decoration: underline;
 }
 
-/* Print: drop the surrounding chrome and let each sheet print naturally. */
+/* Print */
 @media print {
   .mdA4-viewport {
     background: none;
@@ -177,8 +160,5 @@
     width: auto;
     min-height: auto;
     box-shadow: none;
-  }
-  .mdA4-page--guides::before {
-    display: none;
   }
 }

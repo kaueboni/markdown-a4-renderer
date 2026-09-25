@@ -5,7 +5,6 @@ import './demo/demo.css'
 
 function App() {
   const [content, setContent] = useState(sampleMarkdown)
-  const [showGuides, setShowGuides] = useState(true)
 
   return (
     <div className="demo-layout">
@@ -15,14 +14,6 @@ function App() {
           Este é um app de demonstração local para o módulo. O componente
           publicável fica em <code>src/lib</code>.
         </p>
-        <label className="demo-toggle">
-          <input
-            type="checkbox"
-            checked={showGuides}
-            onChange={(event) => setShowGuides(event.target.checked)}
-          />
-          Mostrar guias de quebra de página (297mm)
-        </label>
         <textarea
           className="demo-textarea"
           value={content}
@@ -31,7 +22,7 @@ function App() {
         />
       </aside>
       <main className="demo-preview">
-        <MarkdownA4Renderer content={content} showPageGuides={showGuides} />
+        <MarkdownA4Renderer content={content} />
       </main>
     </div>
   )

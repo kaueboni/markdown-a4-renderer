@@ -59,19 +59,17 @@ function Documento({ markdown }) {
 
 ### Props
 
-| Prop             | Tipo      | Padrão    | Descrição                                                                 |
-| ---------------- | --------- | --------- | -------------------------------------------------------------------------- |
-| `content`        | `string`  | `''`      | Markdown a renderizar (suporta GFM: tabelas, `~~riscado~~`, task list).    |
-| `pageWidth`      | `string`  | `'210mm'` | Largura da folha (unidade CSS livre: `mm`, `px`, etc).                     |
-| `pageMinHeight`  | `string`  | `'297mm'` | Altura mínima e também o espaçamento das guias de quebra de página.        |
-| `padding`        | `string`  | `'20mm'`  | Margem interna da folha.                                                   |
-| `showPageGuides` | `boolean` | `false`   | Mostra linhas tracejadas a cada `pageMinHeight`, simulando onde cada folha A4 terminaria na impressão. |
-| `className`      | `string`  | `''`      | Classe extra no wrapper externo (`.mdA4-viewport`).                        |
-| `components`     | `object`  | —         | Overrides de componentes do `react-markdown` (ex.: customizar `a`, `img`). |
+| Prop            | Tipo     | Padrão    | Descrição                                                                |
+| --------------- | -------- | --------- | --------------------------------------------------------------------------- |
+| `content`       | `string` | `''`      | Markdown a renderizar (suporta GFM: tabelas, `~~riscado~~`, task list).     |
+| `pageWidth`     | `string` | `'210mm'` | Largura da folha (unidade CSS livre: `mm`, `px`, etc).                      |
+| `pageMinHeight` | `string` | `'297mm'` | Altura mínima da folha (ela cresce além disso conforme o conteúdo).         |
+| `padding`       | `string` | `'20mm'`  | Margem interna da folha.                                                    |
+| `className`     | `string` | `''`      | Classe extra no wrapper externo (`.mdA4-viewport`).                         |
+| `components`    | `object` | —         | Overrides de componentes do `react-markdown` (ex.: customizar `a`, `img`).  |
 
-A altura da folha **não é limitada** — ela cresce com o conteúdo. `pageMinHeight`
-só define a altura mínima de uma folha vazia e o intervalo das guias visuais;
-não trunca nem pagina o conteúdo.
+A altura da folha **não é limitada** — cresce continuamente do topo ao fim do
+conteúdo, sem paginação nem quebras.
 
 ### Customizando a aparência
 

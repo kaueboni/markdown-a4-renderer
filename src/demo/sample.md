@@ -4,9 +4,6 @@ Este documento demonstra o **Markdown A4 Renderer**: a folha mantém a largura d
 página A4 (`210mm`), mas a altura cresce livremente conforme o conteúdo — sem paginação,
 como uma rolagem contínua.
 
-Ative as *guias de quebra de página* na barra lateral para ver, em linhas tracejadas
-vermelhas, onde cada folha A4 de `297mm` terminaria se este conteúdo fosse impresso.
-
 ## 1. Texto e ênfase
 
 Markdown padrão funciona normalmente: **negrito**, *itálico*, ~~riscado~~ e `código inline`.
@@ -64,6 +61,18 @@ architecto beatae vitae dicta sunt explicabo.
 
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
 consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+
+Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
+nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
+possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
+a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.
 
 ## 6. Final
 
