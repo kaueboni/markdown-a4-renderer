@@ -201,4 +201,24 @@
   .mdA4-no-print {
     display: none !important;
   }
+
+  /* Avoid awkward cuts: keep headings with what follows, and don't split
+     blocks or list items across a page break. */
+  .mdA4-page h1,
+  .mdA4-page h2,
+  .mdA4-page h3,
+  .mdA4-page h4,
+  .mdA4-page h5,
+  .mdA4-page h6 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
+  .mdA4-page pre,
+  .mdA4-page table,
+  .mdA4-page blockquote,
+  .mdA4-page img,
+  .mdA4-page li {
+    break-inside: avoid;
+  }
 }
