@@ -1,9 +1,29 @@
 .mdA4-viewport {
+  position: relative;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   padding: 40px 20px;
   background: #e9e9ec;
+}
+
+.mdA4-print-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.1em;
+  background: #1a1a1f;
+  color: #fff;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.mdA4-print-button:hover {
+  background: #33333c;
 }
 
 .mdA4-page {
@@ -151,8 +171,24 @@
 }
 
 /* Print */
+/* Printing (and "Save as PDF") shows only this component's sheet, regardless
+   of whatever else is on the host page. */
+@page {
+  size: A4;
+  margin: 0;
+}
+
 @media print {
+  body * {
+    visibility: hidden;
+  }
+  .mdA4-viewport,
+  .mdA4-viewport * {
+    visibility: visible;
+  }
   .mdA4-viewport {
+    position: absolute;
+    inset: 0;
     background: none;
     padding: 0;
   }
@@ -160,5 +196,9 @@
     width: auto;
     min-height: auto;
     box-shadow: none;
+    margin: 0 auto;
+  }
+  .mdA4-no-print {
+    display: none !important;
   }
 }

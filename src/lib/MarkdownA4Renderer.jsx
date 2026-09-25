@@ -13,6 +13,11 @@ import './MarkdownA4Renderer.css'
  * @param {string} [props.pageMinHeight] - CSS length for the page's minimum height
  *   (default '297mm'). The page grows taller than this to fit longer content.
  * @param {string} [props.padding] - CSS length for the page's inner padding (default '20mm').
+ * @param {boolean} [props.showPrintButton] - Show a floating "print / save as PDF"
+ *   button that calls `window.print()`. Printing shows only this component's
+ *   sheet (default `true`).
+ * @param {string} [props.printButtonLabel] - Label for the print button
+ *   (default 'Imprimir / Salvar PDF').
  * @param {object} [props.components] - Custom react-markdown component overrides.
  */
 export function MarkdownA4Renderer({
@@ -21,6 +26,8 @@ export function MarkdownA4Renderer({
   pageWidth = '210mm',
   pageMinHeight = '297mm',
   padding = '20mm',
+  showPrintButton = true,
+  printButtonLabel = 'Imprimir / Salvar PDF',
   components,
 }) {
   const pageStyle = {
@@ -31,6 +38,15 @@ export function MarkdownA4Renderer({
 
   return (
     <div className={['mdA4-viewport', className].filter(Boolean).join(' ')}>
+      {showPrintButton && (
+        <button
+          type="button"
+          className="mdA4-print-button mdA4-no-print"
+          onClick={() => window.print()}
+        >
+          {printButtonLabel}
+        </button>
+      )}
       <div className="mdA4-page" style={pageStyle}>
         <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
           {content}
